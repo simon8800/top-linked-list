@@ -86,9 +86,11 @@ class LinkedList {
       let curr = this.head;
       while (curr) {
         if (curr.next === this.tail) {
+          curr.next = null;
           this.tail = curr;
           break;
         }
+        curr = curr.next;
       }
     }
     return popped;
@@ -102,7 +104,7 @@ class LinkedList {
       curr = this.head;
 
       while (curr) {
-        if (curr.data == value) {
+        if (curr.data === value) {
           return true;
         }
         curr = curr.next;
@@ -153,4 +155,6 @@ console.log(linked1.toString());
 console.log(linked1.at(1));
 console.log(linked1.find(1));
 linked1.prepend(n3);
+console.log(linked1.toString());
+console.log(linked1.pop());
 console.log(linked1.toString());
