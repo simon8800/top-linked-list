@@ -81,6 +81,15 @@ class LinkedList {
       this.tail = null;
       this.head = null;
       this.count--;
+    } else {
+      popped = this.tail;
+      let curr = this.head;
+      while (curr) {
+        if (curr.next === this.tail) {
+          this.tail = curr;
+          break;
+        }
+      }
     }
     return popped;
   }
